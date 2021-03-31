@@ -19,8 +19,6 @@ namespace LinqMeMo
             }
 
         }
-
-
         static void Main(string[] args)
         {
             Where_And_OfType list = new Where_And_OfType();
@@ -31,6 +29,7 @@ namespace LinqMeMo
         }
     }
 }
+
 
 
 
