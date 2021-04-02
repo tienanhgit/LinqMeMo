@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LinqDemo.cs" />
+    <Compile Include="LINQ\GroupBy_ToLookup.cs" />
+    <Compile Include="LINQ\Join_JoinGroup.cs" />
     <Compile Include="LINQ\OrderByInLinQ.cs" />
     <Compile Include="LINQ\Where_And_OfType.cs" />
     <Compile Include="Program.cs" />

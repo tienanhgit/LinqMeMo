@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinqMeMo
 {
-    class Student
+     class Student
     {
         private int _StudentID;
         private string _StudentName;

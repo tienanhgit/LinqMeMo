@@ -9,15 +9,8 @@ namespace LinqMeMo.LINQ
 {
     class Where_And_OfType
     {
-        private IList<Student> studentList = new List<Student>()
-            {
-                new Student() { StudentID = 1, StudentName = "John", Age = 13 },
-                new Student() { StudentID = 2, StudentName = "Moin",  Age = 21 },
-                new Student() { StudentID = 3, StudentName = "Bill",  Age = 18 },
-                new Student() { StudentID = 4, StudentName = "Ram", Age = 20 },
-                new Student() { StudentID = 5, StudentName = "Ron", Age = 15 }
-            };
-        public dynamic WhereInLinq()
+        
+        public   dynamic WhereInLinq(List<Student> studentList)
         {
             //Dùng để lọc danh sách dựa trên các điều kiện
             // Student collection
@@ -28,7 +21,7 @@ namespace LinqMeMo.LINQ
             var teenAgerStudent = from s in studentList
                                   where studentList.IndexOf(s) % 2 == 0
                                   where s.Age < 16
-                                  select s;
+                                  select s.StudentName;
             return teenAgerStudent.ToList();
         }
         public dynamic OfTypeInLinq()
