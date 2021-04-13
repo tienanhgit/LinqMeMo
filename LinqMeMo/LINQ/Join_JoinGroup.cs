@@ -17,6 +17,21 @@ namespace LinqMeMo.LINQ
                 );
             return innerjoin;
         }
+        //Join 
+        public dynamic InnerJoinStudent(IList<Student> studentList, IList<Standard> standardList)
+        {
+            var innerJoinResult = from s in studentList
+                                  join st in standardList
+                                  on s.StandardID equals st.StandardID
+                                  select new
+                                  {
+                                      StudentName = s.StudentName,
+                                      StandardName = st.StandardName,
+                                  };
+            return innerJoinResult;
+        }
+
+        //Group Join
         public dynamic JoinDSStudent(IList<Student> studentList, IList<Standard> standardList)
         {
             var innerjoin = standardList.GroupJoin(
@@ -26,11 +41,10 @@ namespace LinqMeMo.LINQ
                 (std, studentGroup) => new
                 {
                     Students = studentGroup,
-                    Standard= std.StandardName
+                    Standard = std.StandardName
                 });
             return innerjoin;
         }
-
 
 
     }

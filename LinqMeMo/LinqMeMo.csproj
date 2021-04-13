@@ -47,11 +47,14 @@
     <Compile Include="LINQ\GroupBy_ToLookup.cs" />
     <Compile Include="LINQ\Join_JoinGroup.cs" />
     <Compile Include="LINQ\OrderByInLinQ.cs" />
+    <Compile Include="LINQ\Select_SelectMany.cs" />
+    <Compile Include="LINQ\SumOperation.cs" />
     <Compile Include="LINQ\Where_And_OfType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Standard.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="StudentLanguage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

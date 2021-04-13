@@ -12,6 +12,15 @@ namespace LinqMeMo
     {
         //create data
         #region Create Data
+        static IList<StudentLanguage> studentListSub = new List<StudentLanguage>()
+{
+    new StudentLanguage(){ID = 1, Name = "James", Programming = new List<string>() { "C#", ".NET Core" }},
+    new StudentLanguage(){ID = 2, Name = "Sam", Programming = new List<string>() { "WCF", "SQL Server" }},
+    new StudentLanguage(){ID = 3, Name = "Patrik", Programming = new List<string>() { "MVC" }},
+    new StudentLanguage(){ID = 4, Name = "Sara", Programming = new List<string>() { "ADO.NET", "LINQ" }}
+};
+
+
 
         // Student collection
         static IList<Student> studentList = new List<Student>()
@@ -58,17 +67,20 @@ namespace LinqMeMo
             //}
             foreach (var s in p)
             {
-                Console.WriteLine("StudentName:"+s.StudentName+"+++++"+"StandardName :"+s.StandardName);
+               
+               
+                    Console.WriteLine(s);
+                
+               
             }
 
         }
         public static void DoubleForList(dynamic p)
         {
-
             foreach (var agegroup in p)
             {
                 // Console.WriteLine(agegroup.GetType().GetProperty("Key").GetValue(agegroup, null));
-                Console.WriteLine(agegroup.Standard);
+                
                 foreach (Student s in agegroup.Students)
                 {
                     Console.WriteLine(s.StudentName);
@@ -81,12 +93,26 @@ namespace LinqMeMo
             OrderByInLinQ orderByInLinQ = new OrderByInLinQ();
             GroupBy_ToLookup groupBy_ToLookup = new GroupBy_ToLookup();
             Join_JoinGroup join_JoinGroup = new Join_JoinGroup();
+            Select_SelectMany select_SelectMany = new Select_SelectMany();
+            SumOperation sumOperation = new SumOperation();
             // ForList(orderByInLinQ.ThenByStudent(studentList.ToList()));
             //Where_And_OfType where_And_OfType = new Where_And_OfType();
             //ForList(where_And_OfType.WhereInLinq(studentList));
             // ForList(orderByInLinQ.ReverseStudent(studentList));
             //DoubleForList(groupBy_ToLookup.ToLookUpStudent(studentList.ToList()));
-            DoubleForList(join_JoinGroup.JoinDSStudent(studentList, standardList));
+            //  DoubleForList(join_JoinGroup.JoinDSStudent(studentList, standardList));
+            //ForList(join_JoinGroup.InnerJoinStudent(studentList, standardList));
+            //ForList(select_SelectMany.SelectStudentSub(studentList));
+            // ForList(select_SelectMany.SelectMany(studentListSub));
+
+            sumOperation.AggregateLinq(studentList);
+            // Student collection
+
+         
+
+       
+
+
 
             Console.ReadKey();
         }
